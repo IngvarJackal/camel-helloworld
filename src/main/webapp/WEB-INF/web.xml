@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<web-app>
+    <servlet>
+        <servlet-name>Activator</servlet-name>
+        <servlet-class>helloworld.camel.rs.Activator</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Activator</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+</web-app>
