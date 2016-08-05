@@ -1,11 +1,11 @@
 package helloworld.camel.services.api;
 
-import helloworld.camel.camel.Entrypoints;
-import helloworld.camel.camel.ServiceEnrtypoint;
+import com.t2.cn.t2prov.camel.utils.entrypoints.api.ServiceEntry;
+import helloworld.camel.Entrypoints;
 
 public interface OddChecker {
-    @ServiceEnrtypoint(Entrypoints.ODD_CHECKER)
+    @ServiceEntry(Entrypoints.ODD_CHECKER)
     String checkNumber(String number);
-    @ServiceEnrtypoint(Entrypoints.ODD_CHECKER_INTERNAL)
+    @ServiceEntry(Entrypoints.ODD_CHECKER_INTERNAL)
     Boolean checkNumber(Integer number);
 }

@@ -1,18 +1,22 @@
 package helloworld.camel.services;
 
+import com.t2.cn.t2prov.camel.utils.entrypoints.EntryService;
+import helloworld.camel.services.api.CamelProxiedRoutes;
 import helloworld.camel.services.api.OddChecker;
-import helloworld.camel.services.api.Div2Remainder;
 
-public class OddService implements OddChecker, Div2Remainder {
-    public Integer getDivisionReminder(Integer number) {
-        return number % 2;
-    }
+import javax.inject.Inject;
+
+public class OddService implements OddChecker {
+    @Inject
+    EntryService entryService;
 
     public String checkNumber(String number) {
-        return "AAA";
+        Integer parsedNum = entryService.getProxy(CamelProxiedRoutes.class).stringToInt(number);
+        Boolean remainder = entryService.getProxy(OddChecker.class).checkNumber(parsedNum);
+        return entryService.getProxy(CamelProxiedRoutes.class).booleanToString(remainder);
     }
 
     public Boolean checkNumber(Integer number) {
-        return null;
+        return number % 2 != 0;
     }
 }

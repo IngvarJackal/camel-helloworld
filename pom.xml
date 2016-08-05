@@ -40,9 +40,9 @@
             <version>2.17.2</version>
         </dependency>
         <dependency>
-            <groupId>org.reflections</groupId>
-            <artifactId>reflections-maven</artifactId>
-            <version>0.9.9-RC2</version>
+            <groupId>com.t2.cn.t2prov.camel.utils</groupId>
+            <artifactId>entrypoints</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
